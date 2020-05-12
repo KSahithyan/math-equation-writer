@@ -1,0 +1,16 @@
+<template>
+  <require from="./app.css"></require>
+  <require from="./custom-button/custom-button"></require>
+  <div class="container">
+    <div>
+      <img src.bind="imageUrl" alt="">
+    </div>
+
+    <input type="text" class="input" value.bind="input"></input>
+
+    <div class="buttons-container">  
+      <custom-button onclick="setImageUrl()" text="Generate"></custom-button>
+    </div>
+  </div>
+
+</template>

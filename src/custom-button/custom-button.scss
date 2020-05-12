@@ -1,0 +1,15 @@
+$bg: black;
+$font: white;
+
+.button {
+    background-color: $bg;
+    color: $font;
+    border: 2px solid $bg;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: $font;
+    color: $bg;
+
+}
