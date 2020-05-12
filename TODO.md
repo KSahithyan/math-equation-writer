@@ -1,3 +1,6 @@
 ## Todos
 
-[] - Improve UI.
+- [ ] Improve UI.
+- [ ] Add all buttons.
+- [ ] Categorize buttons.
+- [ ] Add search-bar.
