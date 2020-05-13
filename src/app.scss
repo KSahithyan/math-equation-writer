@@ -1,23 +1,146 @@
+@mixin mobile {
+    @media (max-width: 600px) {
+        @content;        
+    }
+}
+
+
 * {
     font-family: Roboto;
     box-sizing: border-box;
 }
 
+.sbutton {
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    // align-items: center;
+    // background-color: red;
     padding: 8px 12px;
+    min-height: 100vh;
+    
+    @include mobile {
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
-.buttons-container {
-    margin-top: 20px;
+.left {
+    position: sticky;
+    top: 32.5vh;
+    height: 25vh;
+    height: fit-content;    
+    
+    @include mobile {
+        width: 100%;
+        top: 0;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid black;
+    }
+
+    .inner {
+        width: fit-content;
+        padding: 10px 0;
+
+        @include mobile {
+        }
+        
+        .img-output {
+            min-height: 100px;
+            min-width: 220px;
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .input {
+            border: 2px solid black;
+            padding: 4px 4px 4px 6px;
+            width: 300px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 1.2rem;
+            background-color: rgb(236, 236, 236);
+            margin-bottom: 12px;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: baseline;
+
+            .clear-button {
+                // color: red;
+                --font-color: white;
+                --border: black;
+                --in-border: #d9534f;
+                --bg: #d9534f;
+            }
+
+        }
+    }
+}
+
+.right {
+    // background-color: blue;
+    margin-left: 60px;
+    max-width: 600px;
+    min-height: 100vh;
+
+    @include mobile {
+        max-width: 80%;
+        margin-left: 0px;
+    }
+    
+    .buttons-container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            
+            h2 {
+                margin-bottom: 20px;
+            }
+        }
+        
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Roboto Mono";
+            font-weight: 500;
+            margin: 4px;
+            font-size: 1.1rem;
+            width: 40px;
+        }
+    }
+}
+
+.clear-button-container {
+    margin-right: 4px;
 }

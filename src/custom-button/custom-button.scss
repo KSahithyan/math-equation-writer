@@ -1,15 +1,23 @@
-$bg: black;
-$font: white;
+:root {
+    --bg: white;
+    --font-color: black;
+    --border: var(--font-color);
+    --in-border: var(--border);
+}
 
 .button {
-    background-color: $bg;
-    color: $font;
-    border: 2px solid $bg;
+    border-radius: 4px;
+    background-color: var(--bg);
+    color: var(--font-color);
     cursor: pointer;
+    border: 2px solid var(--border);
+    transition: all .4s;
 }
 
 .button:hover {
-    background-color: $font;
-    color: $bg;
+    background-color: var(--font-color);
+    color: var(--bg);
+    border-color: var(--in-border);
+    // border: 2px solid $bg;
 
 }

@@ -3,21 +3,134 @@
   box-sizing: border-box;
 }
 
+.sbutton {
+  font-family: "Roboto Mono";
+  font-weight: 500;
+  font-size: .9rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   padding: 8px 12px;
+  min-height: 100vh;
 }
 
-.buttons-container {
+@media (max-width: 600px) {
+  .container {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.left {
+  position: sticky;
+  top: 32.5vh;
+  height: 25vh;
+  height: fit-content;
+}
+
+@media (max-width: 600px) {
+  .left {
+    width: 100%;
+    top: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+  }
+}
+
+.left .inner {
+  width: fit-content;
+  padding: 10px 0;
+}
+
+.left .inner .img-output {
+  min-height: 100px;
+  min-width: 220px;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.left .inner .input {
+  border: 2px solid black;
+  padding: 4px 4px 4px 6px;
+  width: 300px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  background-color: #ececec;
+  margin-bottom: 12px;
+}
+
+.left .inner .buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.left .inner .buttons .clear-button {
+  --font-color: white;
+  --border: black;
+  --in-border: #d9534f;
+  --bg: #d9534f;
+}
+
+.right {
+  margin-left: 60px;
+  max-width: 600px;
+  min-height: 100vh;
+}
+
+@media (max-width: 600px) {
+  .right {
+    max-width: 80%;
+    margin-left: 0px;
+  }
+}
+
+.right .buttons-container {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right .buttons-container div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.right .buttons-container div h2 {
+  margin-bottom: 20px;
+}
+
+.right .buttons-container .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Mono";
+  font-weight: 500;
+  margin: 4px;
+  font-size: 1.1rem;
+  width: 40px;
+}
+
+.clear-button-container {
+  margin-right: 4px;
 }

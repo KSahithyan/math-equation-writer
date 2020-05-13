@@ -14,5 +14,10 @@ export interface ButtonObj {
     /** 
      * description of the box
      */
-    description: string
+    description?: string
+}
+
+export interface Section {
+    title: string,
+    buttonSection: ButtonObj[][]
 }

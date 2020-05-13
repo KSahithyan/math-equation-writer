@@ -1,6 +1,6 @@
-<template>
+<template class.bind="parentClass">
     <require from="./custom-button.css"></require>
-    <button class="button">
+    <button class.bind="['button'].concat(class).join(' ')" click.delegate="clickListener($event)" title.bind="description">
         ${text}
     </button>
 </template>
