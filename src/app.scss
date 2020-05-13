@@ -4,7 +4,6 @@
     }
 }
 
-
 * {
     font-family: Roboto;
     box-sizing: border-box;
@@ -66,8 +65,8 @@ body {
         }
         
         .img-output {
-            min-height: 100px;
-            min-width: 220px;
+            height: 100px;
+            width: 220px;
             display: block;
             margin: auto;
             margin-bottom: 20px;
@@ -76,7 +75,8 @@ body {
         .input {
             border: 2px solid black;
             padding: 4px 4px 4px 6px;
-            width: 300px;
+            min-width: 300px;
+            width: 25vw;
             border-radius: 4px;
             font-weight: 500;
             font-size: 1.2rem;
@@ -117,7 +117,7 @@ body {
         display: flex;
         flex-wrap: wrap;
 
-        div {
+        .button-section {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -125,6 +125,21 @@ body {
             
             h2 {
                 margin-bottom: 20px;
+                
+                @include mobile {
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+            }
+            
+            div {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                @include mobile {
+                    justify-content: center;
+                    
+                }
             }
         }
         
@@ -136,7 +151,11 @@ body {
             font-weight: 500;
             margin: 4px;
             font-size: 1.1rem;
-            width: 40px;
+            min-width: 40px;
+        }
+
+        .function-button {
+            font-size: 1rem;
         }
     }
 }

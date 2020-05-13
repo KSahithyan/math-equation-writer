@@ -89,6 +89,22 @@ export const setsAndLogic: ButtonObj[] = objToArr({
     "RightArrow": "\u21D2",
     "nRightArrow": "\u21CF"
 })
+export const others: ButtonObj[] = [
+    { text: "\u002B", value: "+", description: "Insert Plus" },
+    { text: "-", value: "-", description: "Insert Minus" },
+    { text: "\u00D7", value: "\\times ", description: "Insert Multiplier" },
+    { text: "\u00F7", value: "÷", description: "Insert Divider" },
+    { text: "Fraction", value: "\\frac{a}{b}", description: "Insert Fraction" },
+    { text: "Sin", value: "\\sin(\\theta)", description: "Insert Sin" },
+    { text: "Cos", value: "\\cos(\\theta)", description: "Insert Cos" },
+    { text: "Tan", value: "\\tan(\\theta)", description: "Insert Tan" },
+    { text: "Sin^n", value: "\\sin^{n}(\\theta)", description: "Insert Sin^n" },
+    { text: "Cos^n", value: "\\cos^{n}(\\theta)", description: "Insert Cos^n" },
+    { text: "Tan^n", value: "\\tan^{n}(\\theta)", description: "Insert Tan^n" },
+    { text: "Sum", value: "\\sum_{j=0}^{3} {j^2}", description: "Insert Sum" },
+    { text: "Product", value: "\\prod_{i=1}^{3} {i}", description: "Insert Product" },
+    { text: "Limit", value: "\\lim_{x\\to\\infty} f(x)", description: "Insert Limit" },
+]
 export const all = {
     numbers,
     englishAlphabetsCapitals,
@@ -96,5 +112,6 @@ export const all = {
     greekAlphabetsCapitals,
     greekAlphabetsSmalls,
     greekAlphabetsExtensions,
-    setsAndLogic
+    setsAndLogic,
+    others
 }

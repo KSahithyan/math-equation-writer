@@ -59,8 +59,8 @@ body {
 }
 
 .left .inner .img-output {
-  min-height: 100px;
-  min-width: 220px;
+  height: 100px;
+  width: 220px;
   display: block;
   margin: auto;
   margin-bottom: 20px;
@@ -69,7 +69,8 @@ body {
 .left .inner .input {
   border: 2px solid black;
   padding: 4px 4px 4px 6px;
-  width: 300px;
+  min-width: 300px;
+  width: 25vw;
   border-radius: 4px;
   font-weight: 500;
   font-size: 1.2rem;
@@ -109,15 +110,34 @@ body {
   flex-wrap: wrap;
 }
 
-.right .buttons-container div {
+.right .buttons-container .button-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 }
 
-.right .buttons-container div h2 {
+.right .buttons-container .button-section h2 {
   margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .right .buttons-container .button-section h2 {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.right .buttons-container .button-section div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .right .buttons-container .button-section div {
+    justify-content: center;
+  }
 }
 
 .right .buttons-container .button {
@@ -128,7 +148,11 @@ body {
   font-weight: 500;
   margin: 4px;
   font-size: 1.1rem;
-  width: 40px;
+  min-width: 40px;
+}
+
+.right .buttons-container .function-button {
+  font-size: 1rem;
 }
 
 .clear-button-container {

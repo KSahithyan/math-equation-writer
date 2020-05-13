@@ -32,7 +32,8 @@
           <h2>${section.title}</h2>
           <div repeat.for="buttonSection of section.buttonSection">
             <!-- ${buttonSection} -->
-            <custom-button repeat.for="button of buttonSection" data.bind="button"></custom-button>
+            <custom-button repeat.for="button of buttonSection" data.bind="button" if.bind="button.text.length == 1"></custom-button>
+            <custom-button repeat.for="button of buttonSection" data.bind="button" if.bind="button.text.length > 1" class="function-button"></custom-button>
           </div>
         </div>
         <!-- <div class="numbers">

@@ -5,7 +5,7 @@ const $ = (id: string) => document.getElementById(id);
 const urlFormat = (value: string, format = 'svg') => `https://math.now.sh/?from=${value}`
 
 export class App {
-  input: string = String.raw`\frac{-b\pm\sqrt{b^2-4ac}}{2a}`;
+  input: string = ``;
   imageUrl: string = ''
   allButtons = all;
   // buttons: ButtonObj[] = Object.values(all).reduce((prev, curr) => prev.concat(curr), [])
@@ -14,6 +14,7 @@ export class App {
     { title: "Alphabets - English", buttonSection: [all.englishAlphabetsCapitals, all.englishAlphabetsSmalls] },
     { title: "Alphabets - Greek", buttonSection: [all.greekAlphabetsSmalls, all.greekAlphabetsCapitals, all.greekAlphabetsExtensions] },
     { title: "Sets and logic", buttonSection: [all.setsAndLogic] },
+    { title: "Others", buttonSection: [all.others] },
   ]
 
   constructor() {
@@ -22,6 +23,8 @@ export class App {
     // this.setImageUrl()
   }
 
+  // IMPORTANT
+  // Test this feature.
   addValue(value, event) {
     let inputTag = <HTMLInputElement>$('input');
 
@@ -29,18 +32,15 @@ export class App {
     let start = inputTag.selectionStart
     let end = inputTag.selectionEnd
     
-    this.input = this.input.slice(0, start) + value + this.input.slice(end + 1)
+    this.input = this.input.slice(0, start) + value + this.input.slice(end)
     
   }
 
   clearInput() {
-    console.log('www44s4', this)
     this.input = '';
   }
 
   setImageUrl() {
-    console.log('wwwwow', this)
-    this.imageUrl = urlFormat(this.input)
-    console.log(this.imageUrl);
+    this.imageUrl = urlFormat(this.input.replace('+', '%2B'))
   }
 }
