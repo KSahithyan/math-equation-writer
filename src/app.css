@@ -1,3 +1,19 @@
+.flex, .flex-column, .flex-row {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.border-round, .left .inner .input {
+  border-radius: 4px;
+}
+
 * {
   font-family: Roboto;
   box-sizing: border-box;
@@ -7,25 +23,30 @@
   font-family: "Roboto Mono";
   font-weight: 500;
   font-size: .9rem;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
+  --background: var(--bg);
+  --button-font-color: var(--font-color);
+  --border: var(--font-color);
+  --in-border: var(--font-color);
 }
 
 body {
+  --bg: #fdfdfd;
+  --font-color: black;
+  --input-bg: #ececec;
+  background-color: var(--bg);
+  color: var(--font-color);
   margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  transition: all .4s;
+  scroll-behavior: smooth;
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
   padding: 8px 12px;
   min-height: 100vh;
+  background: transparent;
 }
 
 @media (max-width: 600px) {
@@ -33,6 +54,12 @@ body {
     align-items: center;
     flex-direction: column;
   }
+}
+
+body[theme="dark"] {
+  --bg: #222;
+  --font-color: white;
+  --input-bg: rgb(155, 155, 155);
 }
 
 .left {
@@ -46,10 +73,10 @@ body {
   .left {
     width: 100%;
     top: 0;
-    background-color: white;
+    background-color: var(--bg);
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--font-color);
   }
 }
 
@@ -64,31 +91,37 @@ body {
   display: block;
   margin: auto;
   margin-bottom: 20px;
+  fill: red;
 }
 
 .left .inner .input {
-  border: 2px solid black;
+  border: 2px solid var(--font-color);
   padding: 4px 4px 4px 6px;
   min-width: 300px;
   width: 25vw;
-  border-radius: 4px;
   font-weight: 500;
   font-size: 1.2rem;
-  background-color: #ececec;
+  background-color: var(--input-bg);
   margin-bottom: 12px;
+  color: var(--font-color);
 }
 
 .left .inner .buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: baseline;
 }
 
+.left .inner .buttons > div label {
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
 .left .inner .buttons .clear-button {
-  --font-color: white;
-  --border: black;
+  --button-font-color: var(--bg);
+  --border: var(--font-color);
   --in-border: #d9534f;
-  --bg: #d9534f;
+  --background: #d9534f;
 }
 
 .right {
@@ -101,11 +134,12 @@ body {
   .right {
     max-width: 80%;
     margin-left: 0px;
+    margin-top: 20px;
   }
 }
 
 .right .buttons-container {
-  margin-top: 20px;
+  margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -144,8 +178,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto Mono";
-  font-weight: 500;
   margin: 4px;
   font-size: 1.1rem;
   min-width: 40px;

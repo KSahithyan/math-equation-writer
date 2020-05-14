@@ -9,7 +9,7 @@ export class CustomButton {
     @bindable class: string = ''
     @bindable parentClass: string = ''
     @bindable data: any = null
-    @bindable description: string = null
+    @bindable description: string = ''
 
     bind(bindingContext: App, overrideContext: Context) {
         let parentContext = overrideContext.parentOverrideContext ? overrideContext.parentOverrideContext.parentOverrideContext.parentOverrideContext.bindingContext : bindingContext
@@ -21,7 +21,7 @@ export class CustomButton {
         if (!this.clickListener) {
             this.clickListener = (<Function>parentContext.addValue).bind(parentContext, this.value)
             // console.log(this.clickListener) 
-        }
+        } else { console.log(this.clickListener) }
         // console.log(bindingContext, overrideContext)
     }
 }

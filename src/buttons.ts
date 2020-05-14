@@ -7,7 +7,7 @@ const generateAlphabets = (startingKeycode: number, count: number): ButtonObj[] 
         let newButton = {
             text: letter,
             value: letter,
-            description: "Letter: " + letter
+            description: "Insert Letter " + letter
         }
         if (startingKeycode == 913) {
             newButton.value = greeks[i]
@@ -34,7 +34,16 @@ export const numbers = "1234567890".split('').map(a => {
         description: "Number: " + a
     } as ButtonObj
 })
-
+export const basicSymbols: ButtonObj[] = [
+    { text: "\u002B", value: "+", description: "Insert Plus" },
+    { text: "-", value: "-", description: "Insert Minus" },
+    { text: "\u00D7", value: "\\times ", description: "Insert Multiplier" },
+    { text: "\u00F7", value: "÷", description: "Insert Divider" },
+    { text: "=", value: "=", description: "Insert Equal" },
+    { text: "\u2260", value: "\\neg", description: "Insert Not Equal" },
+    { text: "\u2261", value: "\\equiv", description: "Insert Equivalent" },
+    { text: "\u2262", value: "\\not\\equiv", description: "Insert Not Equivalent" },
+]
 export const englishAlphabetsCapitals = generateAlphabets(65, 26); // 65 -> A. from A to next 26
 export const englishAlphabetsSmalls = generateAlphabets(97, 26); // 97 -> a. to next 26
 // export const greekAlphabetsCapitals = generateAlphabets(913, 25).filter(value => value.text != String.fromCharCode(930)); // 913 -> Α. to next 24
@@ -86,14 +95,10 @@ export const setsAndLogic: ButtonObj[] = objToArr({
     "wedge": "\u2227",
     "vdash": "\u22A2",
     "models": "\u22A8",
-    "RightArrow": "\u21D2",
-    "nRightArrow": "\u21CF"
+    "Rightarrow ": "\u21D2",
+    "nRightarrow ": "\u21CF"
 })
 export const others: ButtonObj[] = [
-    { text: "\u002B", value: "+", description: "Insert Plus" },
-    { text: "-", value: "-", description: "Insert Minus" },
-    { text: "\u00D7", value: "\\times ", description: "Insert Multiplier" },
-    { text: "\u00F7", value: "÷", description: "Insert Divider" },
     { text: "Fraction", value: "\\frac{a}{b}", description: "Insert Fraction" },
     { text: "Sin", value: "\\sin(\\theta)", description: "Insert Sin" },
     { text: "Cos", value: "\\cos(\\theta)", description: "Insert Cos" },
@@ -104,9 +109,12 @@ export const others: ButtonObj[] = [
     { text: "Sum", value: "\\sum_{j=0}^{3} {j^2}", description: "Insert Sum" },
     { text: "Product", value: "\\prod_{i=1}^{3} {i}", description: "Insert Product" },
     { text: "Limit", value: "\\lim_{x\\to\\infty} f(x)", description: "Insert Limit" },
+    { text: "Limit", value: "\\lim_{x\\to\\infty} f(x)", description: "Insert Limit" },
+    // { text: "||", value: "\\parallel", description: "Insert Limit" },
 ]
 export const all = {
     numbers,
+    basicSymbols,
     englishAlphabetsCapitals,
     englishAlphabetsSmalls,
     greekAlphabetsCapitals,
@@ -115,3 +123,12 @@ export const all = {
     setsAndLogic,
     others
 }
+
+export const allSections = [
+    { title: "Numbers", buttonSection: [all.numbers] },
+    { title: "Basic Symbols", buttonSection: [all.basicSymbols] },
+    { title: "Alphabets - English", buttonSection: [all.englishAlphabetsCapitals, all.englishAlphabetsSmalls] },
+    { title: "Alphabets - Greek", buttonSection: [all.greekAlphabetsSmalls, all.greekAlphabetsCapitals, all.greekAlphabetsExtensions] },
+    { title: "Sets and logic", buttonSection: [all.setsAndLogic] },
+    { title: "Others", buttonSection: [all.others] },
+]

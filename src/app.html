@@ -13,27 +13,33 @@
     </div>
   </div> -->
   
-  <div class="container">
+  <div class="flex-row container">
     <div class="left sticky">
       <div class="inner">
 
         <img src.bind="imageUrl" alt="" class="img-output">
-        <input type="text" id="input" class="input" value.bind="input"></input>
+        <input type="text" id="input" autofocus class="input" value.bind="input"></input>
         <div class="buttons">
-          <custom-button click-listener.bind="clearInput" text="Clear" class="clear-button sbutton" parent-class="clear-button-container"></custom-button>
+          <div>
+            <input type="checkbox" checked.bind="inlineToggle" id="inline-toggle">
+            <label for="inline-toggle">Inline Equation</label>
+          </div>
+          <!-- <custom-button click-listener.bind="clearInput" text="Clear" class="clear-button sbutton" parent-class="clear-button-container"></custom-button> -->
+          <!-- <custom-button text="Save as" click-listener.bind="saveAs" class="sbutton" parent-class="clear-button-container"></custom-button> -->
           <custom-button click-listener.bind="setImageUrl" text="Generate" class="generate-button sbutton"></custom-button>
         </div>
       </div>
     </div>
 
     <div class="right">
+      <!-- <custom-button text.bind="'Theme ' + theme" click-listener.bind="changeTheme" class="sbutton" ></custom-button> -->
       <div class="buttons-container">
         <div repeat.for="section of sections" class="flex-column button-section">
           <h2>${section.title}</h2>
           <div repeat.for="buttonSection of section.buttonSection">
             <!-- ${buttonSection} -->
-            <custom-button repeat.for="button of buttonSection" data.bind="button" if.bind="button.text.length == 1"></custom-button>
-            <custom-button repeat.for="button of buttonSection" data.bind="button" if.bind="button.text.length > 1" class="function-button"></custom-button>
+            <custom-button repeat.for="button of buttonSection" data.bind="button" if.bind="button.text.length == 1" class="sbutton"></custom-button>
+            <custom-button repeat.for="button of buttonSection" data.bind="button" if.bind="button.text.length > 1" class="function-button sbutton"></custom-button>
           </div>
         </div>
         <!-- <div class="numbers">

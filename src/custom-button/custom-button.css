@@ -1,21 +1,21 @@
-:root {
-  --bg: white;
-  --font-color: black;
-  --border: var(--font-color);
+template {
+  --background: white;
+  --button-font-color: black;
+  --border: var(--button-font-color);
   --in-border: var(--border);
 }
 
 .button {
   border-radius: 4px;
-  background-color: var(--bg);
-  color: var(--font-color);
+  background-color: var(--background);
+  color: var(--button-font-color);
   cursor: pointer;
   border: 2px solid var(--border);
-  transition: all .4s;
+  transition: all .2s;
 }
 
 .button:hover {
-  background-color: var(--font-color);
-  color: var(--bg);
+  background-color: var(--button-font-color);
+  color: var(--background);
   border-color: var(--in-border);
 }
