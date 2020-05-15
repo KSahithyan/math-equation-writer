@@ -28,9 +28,14 @@ export class App {
     let inputTag = <HTMLInputElement>$('input');
 
     // let direction = inputTag.selectionDirection
-    let start = inputTag.selectionStart || this.input.length
-    let end = inputTag.selectionEnd || this.input.length
-    console.log({start, end, length: this.input.length})
+    // console.log({selectionEnd: inputTag.selectionEnd, selectionStart: inputTag.selectionStart})
+    let start = inputTag.selectionStart
+    let end = inputTag.selectionEnd
+
+    if (start == 0 && end == 0) {
+      start = end = 0;
+    }
+    // console.log({start, end, length: this.input.length})
 
     this.input = this.input.slice(0, start) + value + this.input.slice(end)    
   }

@@ -43,6 +43,8 @@ export const basicSymbols: ButtonObj[] = [
     { text: "\u2260", value: "\\neg", description: "Insert Not Equal" },
     { text: "\u2261", value: "\\equiv", description: "Insert Equivalent" },
     { text: "\u2262", value: "\\not\\equiv", description: "Insert Not Equivalent" },
+    { text: "(", value: "(", description: "" },
+    { text: ")", value: ")", description: "" },
 ]
 export const englishAlphabetsCapitals = generateAlphabets(65, 26); // 65 -> A. from A to next 26
 export const englishAlphabetsSmalls = generateAlphabets(97, 26); // 97 -> a. to next 26
@@ -94,9 +96,30 @@ export const setsAndLogic: ButtonObj[] = objToArr({
     "vee": "\u2228",
     "wedge": "\u2227",
     "vdash": "\u22A2",
-    "models": "\u22A8",
+    "models": "\u22A8"
+    
+})
+
+export const arrows: ButtonObj[] = objToArr({
+    "rightarrow": "\u2192",
+    "leftarrow": "\u2190",
+    // "nrightarrow": "",
+    // "nleftarrow": "",
+    "longrightarrow": "\u27F6",
+    "longleftarrow": "\u27F5",
     "Rightarrow ": "\u21D2",
-    "nRightarrow ": "\u21CF"
+    "Leftarrow": "\u21D0",
+    "nRightarrow ": "\u21CF",
+    "nLeftarrow": "\u21CD",
+    "Longrightarrow": "\u27F6",
+    "Longleftarrow": "\u27F8",
+    // "leadsto": "",
+    // "mapsto": "",
+    // "longmapsto": "",
+    "leftrightarrow": "\u2194",
+    "uparrow": "\u2191",
+    "downarrow": "\u2193",
+    "updownarrow": "\u2195",
 })
 export const others: ButtonObj[] = [
     { text: "Fraction", value: "\\frac{a}{b}", description: "Insert Fraction" },
@@ -109,9 +132,14 @@ export const others: ButtonObj[] = [
     { text: "Sum", value: "\\sum_{j=0}^{3} {j^2}", description: "Insert Sum" },
     { text: "Product", value: "\\prod_{i=1}^{3} {i}", description: "Insert Product" },
     { text: "Limit", value: "\\lim_{x\\to\\infty} f(x)", description: "Insert Limit" },
-    { text: "Limit", value: "\\lim_{x\\to\\infty} f(x)", description: "Insert Limit" },
+    { text: "Factorial", value: "{x}!", description: "Insert Factorial" },
+    { text: "Log", value: "\\log{x}", description: "Insert Log" },
+    { text: "Log_n", value: "\\log_{n} {x}", description: "Insert Log_n" },
+    { text: "Exponent", value: "{x}^{n}", description: "Insert an Exponent" },
+    { text: "Angle", value: "{x}^{\circ}", description: "Insert an Angle" }
     // { text: "||", value: "\\parallel", description: "Insert Limit" },
 ]
+
 export const all = {
     numbers,
     basicSymbols,
@@ -121,6 +149,7 @@ export const all = {
     greekAlphabetsSmalls,
     greekAlphabetsExtensions,
     setsAndLogic,
+    arrows,
     others
 }
 
@@ -130,5 +159,6 @@ export const allSections = [
     { title: "Alphabets - English", buttonSection: [all.englishAlphabetsCapitals, all.englishAlphabetsSmalls] },
     { title: "Alphabets - Greek", buttonSection: [all.greekAlphabetsSmalls, all.greekAlphabetsCapitals, all.greekAlphabetsExtensions] },
     { title: "Sets and logic", buttonSection: [all.setsAndLogic] },
+    { title: "Arrows", buttonSection: [all.arrows] },
     { title: "Others", buttonSection: [all.others] },
 ]

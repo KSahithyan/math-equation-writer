@@ -1,0 +1,22 @@
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    @extend .flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    @extend .flex;
+    flex-direction: row;
+}
+
+.flex-wrap {
+    @extend .flex;
+    flex-wrap: wrap;
+}
+
+.border-round {
+    border-radius: 4px;
+}

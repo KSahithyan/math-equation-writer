@@ -14,12 +14,12 @@
   </div> -->
   
   <div class="flex-row container">
-    <div class="left sticky">
+    <div class="left">
       <div class="inner">
 
         <img src.bind="imageUrl" alt="" class="img-output">
-        <input type="text" id="input" autofocus class="input" value.bind="input"></input>
-        <div class="buttons">
+        <input type="text" id="input" autofocus class="border-round input" value.bind="input"></input>
+        <div class="flex buttons">
           <div>
             <input type="checkbox" checked.bind="inlineToggle" id="inline-toggle">
             <label for="inline-toggle">Inline Equation</label>
@@ -33,10 +33,10 @@
 
     <div class="right">
       <!-- <custom-button text.bind="'Theme ' + theme" click-listener.bind="changeTheme" class="sbutton" ></custom-button> -->
-      <div class="buttons-container">
-        <div repeat.for="section of sections" class="flex-column button-section">
+      <div class="flex-wrap buttons-container">
+        <div repeat.for="section of sections" class="flex-wrap button-section">
           <h2>${section.title}</h2>
-          <div repeat.for="buttonSection of section.buttonSection">
+          <div repeat.for="buttonSection of section.buttonSection" class="flex-wrap">
             <!-- ${buttonSection} -->
             <custom-button repeat.for="button of buttonSection" data.bind="button" if.bind="button.text.length == 1" class="sbutton"></custom-button>
             <custom-button repeat.for="button of buttonSection" data.bind="button" if.bind="button.text.length > 1" class="function-button sbutton"></custom-button>

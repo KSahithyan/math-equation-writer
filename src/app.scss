@@ -1,30 +1,10 @@
+@import './global';
+
 @mixin mobile {
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
         @content;        
     }
 }
-
-// Globals
-//// Transfer to _global.scss and import.
-.flex {
-    display: flex;
-}
-
-.flex-column {
-    @extend .flex;
-    flex-direction: column;
-}
-
-.flex-row {
-    @extend .flex;
-    flex-direction: row;
-}
-
-.border-round {
-    border-radius: 4px;
-}
-
-// Globals end
 
 * {
     font-family: Roboto;
@@ -43,6 +23,7 @@
 }
 
 body {
+    @extend .flex;
     --bg: #fdfdfd;
     --font-color: black;
     --input-bg: #ececec;
@@ -52,15 +33,12 @@ body {
 
     margin: 0;
     min-height: 100vh;
-    display: flex;
     justify-content: center;
-    // align-items: center;
     transition: all .4s;
     scroll-behavior: smooth;
 }
 
 .container {
-    // align-items: center;
     // background-color: red;
     padding: 8px 12px;
     min-height: 100vh;    
@@ -81,7 +59,6 @@ body[theme="dark"] {
 .left {
     position: sticky;
     top: 32.5vh;
-    height: 25vh;
     height: fit-content;    
     
     @include mobile {
@@ -111,7 +88,7 @@ body[theme="dark"] {
         }
 
         .input {
-            @extend .border-round;
+            background-color: var(--input-bg);
             border: 2px solid var(--font-color);
             padding: 4px 4px 4px 6px;
             min-width: 300px;
@@ -119,13 +96,12 @@ body[theme="dark"] {
             
             font-weight: 500;
             font-size: 1.2rem;
-            background-color: var(--input-bg);
-            margin-bottom: 12px;
             color: var(--font-color);
+            
+            margin-bottom: 12px;
         }
         
         .buttons {
-            display: flex;
             justify-content: space-between;
             align-items: baseline;
 
@@ -138,10 +114,10 @@ body[theme="dark"] {
 
             .clear-button {
                 // color: red;
+                --background: #d9534f;
                 --button-font-color: var(--bg);
                 --border: var(--font-color);
                 --in-border: #d9534f;
-                --background: #d9534f;
             }
 
             .generate-button {
@@ -159,6 +135,8 @@ body[theme="dark"] {
     // background-color: blue;
     margin-left: 60px;
     max-width: 600px;
+    // min-width: 500px;
+    width: 45%;
     min-height: 100vh;
 
     @include mobile {
@@ -169,13 +147,8 @@ body[theme="dark"] {
     
     .buttons-container {
         margin-top: 12px;
-        display: flex;
-        flex-wrap: wrap;
-
+        
         .button-section {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
             width: 100%;
             
             h2 {
@@ -189,8 +162,6 @@ body[theme="dark"] {
             
             div {
                 width: 100%;
-                display: flex;
-                flex-wrap: wrap;
                 @include mobile {
                     justify-content: center;
                     
@@ -199,7 +170,7 @@ body[theme="dark"] {
         }
         
         .button {
-            display: flex;
+            @extend .flex;
             justify-content: center;
             align-items: center;
             margin: 4px;

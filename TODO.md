@@ -1,15 +1,16 @@
 ## Todos
 
 - [ ] Add all buttons.
-- - [ ] `exponent`.
-- - [ ] `angle`.
-- - [ ] `measuredangle`.
-- - [ ] `factorial`.
-- - [ ] `log`.
+- - [x] `exponent`.
+- - [x] `angle`.
+- - [ ] `angle-symbol`.
+- - [ ] `measuredangle-symbol`.
+- - [x] `factorial`.
+- - [x] `log`.
+- - [x] `log_n`.
 - [ ] Categorize buttons.
 - [ ] Add `search-bar`.
-- [ ] Add `modal` component.
 - [x] Add `dark-mode`. (not finished).
-- [x] Generate `in-line` equations too.
 - [ ] Add `save-image` button.
-- [ ] Break SCSS into small things.
+- [x] Break SCSS into small things.
+- [ ] Write a more-suitable `README.md`.

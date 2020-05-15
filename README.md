@@ -1,5 +1,25 @@
 # `Math-Writer`
 
+This project is based on [Aurelia](http://aurelia.io/) and bootstrapped by [aurelia-cli](https://github.com/aurelia/cli)
+
+## Contributing
+
+If you want to contribute to this project, you can do one of this,
+1. You can find a bug/error/improvement_idea and create an issue.
+2. goto [TODO.md](/TODO.md) file and fix/add/develop something mentioned there. And make a pull request.
+
+## Development
+
+1. Run `npm start`, then open `http://localhost:8080`
+   OR
+   Use `npm start -- --port portNumber` to override the port number.
+
+2. Develop something.
+3. Test it manually.
+4. Make a pull request.
+
+<!-- # `Math-Writer`
+
 This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
 
 For more information, go to https://aurelia.io/docs/cli/webpack
@@ -24,10 +44,4 @@ For long time aurelia-cli user, you can still use `au run` with those arguments 
 
 ## Build for production
 
-Run `npm run build`, or the old way `au build --env prod`.
-
-## Unit tests
-
-Run `au test` (or `au jest`).
-
-To run in watch mode, `au test --watch` or `au jest --watch`.
+Run `npm run build`, or the old way `au build --env prod`. -->
