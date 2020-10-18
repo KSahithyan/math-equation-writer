@@ -32,7 +32,7 @@ node_modules
 /scripts
 /src/environment.js
 /src/environment.ts
-/dist
+/public
 /test/coverage-jest
 /test/coverage-karma
 
